@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",  // Match static files
-      "dest": "website/static/$1"  // Map to the actual location of static files
+      "src": "/static/(.*)",
+      "dest": "website/static/$1"
     },
     {
       "src": "/(.*)",
