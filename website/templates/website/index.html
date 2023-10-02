@@ -1,0 +1,318 @@
+{% extends 'website/base.html' %}
+
+{% block title %} AC: Homepage {% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Header Section -->
+    <header class="header p-2">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light mx-5">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'logos/personal-logo.png' %}" alt="" class="header-logo">
+            </a>
+
+            <!-- Navbar Icon for Smaller Screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="{% url 'website:project-list' %}">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Welcome, Section -->
+    <div class="welcome-section">
+        <div class="d-flex flex-column align-items-center text-center">
+            <!-- Introduction -->
+            <h1 class="name-intro mt-5">
+                Hello, I'm <span class="name-wrapper"> Alonzo Chris.</span>
+            </h1>
+
+            <!-- Bio -->
+            <p class="bio">
+                Passionate web developer and designer, committed to continuous learning and creativity.
+            </p>
+
+            <!-- Call to Action (CTA) Buttons -->
+            <div class="buttons d-flex align-items-center mb-5">
+                <a class="btn btn-on-dark-bg mx-3 p-3 border border-2" href="#contact">Contact Me</a>
+                <a class="btn btn-on-dark-bg mx-3 p-3" href="{% url 'website:project-list' %}">View All Projects</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Recent Projects Section -->
+    <div class="project-section border-bottom border-1 mt-5">
+        <div class="d-flex flex-column align-items-center text-center">
+            <!-- Section Heading -->
+            <h1 class="section-heading">Recent Projects</h1>
+
+            <!-- Section Subheading -->
+            <p class="section-subheading">
+                Explore the projects I'm passionate about. See more in the
+                <a class="project-link text-decor-none" href="{% url 'website:project-list' %}">Projects Section</a>.
+            </p>
+
+            <!-- Project Card -->
+            <div class="card shadow d-flex flex-column align-self-center mt-4">
+                <!-- User Profile Header -->
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <!-- User Profile -->
+                    <div class="user-icon d-flex align-items-center">
+                        <img class="profile-img rounded-circle shadow" src="{% static 'images/profile-pic.png' %}" alt="Profile Picture">
+                        <h2 class="project-username ms-2 mt-2"><b>Alonzo Chris</b></h2>
+                    </div>
+                    <!-- User Navigation -->
+                    <div class="user-nav">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Project Card Body -->
+                <div class="card-body position-relative">
+                    <!-- Project Image -->
+                    <img id="carouselImage" src="" alt="Image" class="img-fluid">
+                    <!-- Image Navigation Toggles -->
+                    <a id="prevBtn" class="position-absolute" style="left: 5%; top: 50%; transform: translateY(-50%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#94A4AB" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                        </svg>
+                    </a>
+                    <a id="nextBtn" class="position-absolute" style="right: 5%; top: 50%; transform: translateY(-50%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#94A4AB" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                    </a>
+                    <!-- Image Indicators -->
+                    <div class="d-flex justify-content-center">
+                        <div id="circleIndicator1" class="rounded-circle mx-1 mt-3" style="width: 8px; height: 8px; background-color: black;"></div>
+                        <div id="circleIndicator2" class="rounded-circle mx-1 mt-3" style="width: 8px; height: 8px; background-color: #D8D8D8;"></div>
+                        <div id="circleIndicator3" class="rounded-circle mx-1 mt-3" style="width: 8px; height: 8px; background-color: #D8D8D8;"></div>
+                    </div>
+                </div>
+
+                <!-- Project Card Footer -->
+                <div class="card-footer d-flex flex-column align-items-start" id="AllComments">
+
+                    <!-- Like Button -->
+                    <a class="likeBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-heart" viewBox="0 0 16 16">
+                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.920 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Number of Like Counts -->
+                    <p class="mt-2 project-popularity">
+                        <b>
+                            <span id="likesCount"></span>
+                        </b>
+                    </p>
+
+                    <!-- Project Bio and Description -->
+                    <p class="project-bio text-start">
+                        <span class="project-username"><b></b></span>
+                        <span class="project-description text-justify"></span>
+                        <span class="highlighted-words"></span>
+                    </p>
+
+                    <!-- All Comments Displayed-->
+                    <div id="commentDisplay" class="text-start border-top w-100">
+                        <p></p>
+                    </div>
+
+                    <!-- View All Comments -->
+                    <div class="border-top w-100">
+                        <a id="viewAllComments" class="view-all-comments text-start my-2" href="#AllComments"></a>
+                    </div>
+
+                    <!-- Comment Input Section -->
+                    <div class="input-group w-100">
+                        <input id="commentInput" class="addComment form-control" type="text" placeholder="Add a comment...">
+                        <button id="postBtn" class="btn btn-on-light-bg">Post</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Project Call to Action -->
+            <div class="project-cta d-flex align-items-center justify-content-center my-5">
+                <a class="btn text-decor-none btn-on-light-bg shadow p-3" href="{% url 'website:project-list' %}">View All Projects</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="about-section d-flex align-items-center justify-content-center" id="about">
+        <div class="container my-5">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="profile-container d-flex">
+
+                    <!-- Profile Image -->
+                    <div class="profile-img-container">
+                        <img class="img-border rounded-circle shadow" src="{% static 'images/profile-pic.png' %}" alt="Profile Picture">
+                    </div>
+
+                    <div class="d-flex flex-column align-items-start ms-4">
+
+                        <!-- Profile Name -->
+                        <h2 class="profile-name">Alonzo Chris</h2>
+
+                        <!-- Job Title -->
+                        <div class="my-2">
+                            <span class="border rounded job-title p-2 me-2">Full Stack Developer</span>
+                        </div>
+
+                        <!-- Profile Bio -->
+                        <p class="profile-bio my-2 lh-lg" align="justify">
+                            I started my journey with web development, learning <span class="highlighted-words">HTML, CSS, and PHP</span> during my university years.
+                        </p>
+
+                        <p class="profile-bio my-2 lh-lg" align="justify">
+                            My passion for coding led me to explore <span class="highlighted-words">Python and Javascript</span> through self-guided learning.
+                            Today, I specialize in both front-end and back-end web development using technologies like <span class="highlighted-words">Flask, Django, and REST API</span>.
+                        </p>
+
+                        <p class="profile-bio my-2 lh-lg" align="justify">
+                            Additionally, I excel in <span class="highlighted-words">Python Scripting, Game Development, Web Scraping,</span> and building <span class="highlighted-words">GUI applications</span>.
+                            I'm proficient in <span class="highlighted-words">Git, GitHub, and version control</span> for collaborative coding.
+                        </p>
+
+                        <p class="profile-bio my-2 lh-lg" align="justify">
+                            Outside of coding, I enjoy <span class="highlighted-words">stock trading, maintaining a healthy lifestyle with frequent gym visits,</span> and indulging in a nightly ritual of reading manga.
+                        </p>
+
+                        <p class="profile-bio my-2 lh-lg" align="justify">
+                            I'm eager to apply my skills and passion to my first professional venture, contributing to the company's growth and pushing my abilities to new heights.
+                        </p>
+
+                        <!-- Download Resume Button -->
+                        <div class="btn-containers d-flex flex-column justify-content-center mt-4">
+                            <a class="btn btn-on-dark-bg border border-2 my-2 p-3" href="#">Download Résumé</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section my-5" id="contact">
+        <div class="d-flex flex-column align-items-center">
+
+            <!-- About Me Heading -->
+            <h1 class="section-heading">Get in Touch</h1>
+            <!-- About Me SubHeading-->
+            <p class="section-subheading">Reach out to collaborate on projects or for any inquiries.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form action="{% url 'website:index' %}" method="post" onsubmit="return onSubmit()">
+            {% csrf_token %}
+
+            <!-- Name Form -->
+            <div class="form-group d-flex justify-content-center align-items-center mb-2">
+                <div class="flex-row w-50">
+                <label for="Full Name" class="text-capitalize mb-1"><b>{{ contact_form.full_name.label }}</b></label>
+                {{ contact_form.full_name }}
+                </div>
+            </div>
+
+            <!-- Email Form -->
+            <div class="form-group d-flex justify-content-center align-items-center mb-2">
+                <div class="flex-row w-50">
+                <label for="Email" class="text-capitalize mb-1"><b>{{ contact_form.email.label }}</b></label>
+                {{ contact_form.email }}
+                </div>
+            </div>
+
+            <!-- Message Form -->
+            <div class="form-group d-flex justify-content-center align-items-center mb-2">
+                <div class="flex-row w-50">
+                <label for="Message" class="text-capitalize mb-1"><b>{{ contact_form.message.label }}</b></label>
+                {{ contact_form.message }}
+                </div>
+            </div>
+
+            <!-- Submit Form -->
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-on-light-bg shadow mt-4 p-3">Send Message</button>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-container p-4">
+        <footer class="d-flex flex-column justify-content-center align-items-center">
+
+            <!-- Social Media Links -->
+            <ul class="nav justify-content-end list-unstyled d-flex mt-4">
+
+                <!-- GitHub Link -->
+                <li class="mx-4">
+                    <a class="text-body-secondary" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#94A4AB" class="bi bi-github" viewBox="0 0 16 16">
+                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- LinkedIn Link -->
+                <li class="mx-4">
+                    <a class="text-body-secondary" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#94A4AB" class="bi bi-linkedin" viewBox="0 0 16 16">
+                          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- Instagram Link -->
+                <li class="mx-4">
+                    <a class="text-body-secondary" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#94A4AB" class="bi bi-instagram" viewBox="0 0 16 16">
+                          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-4 border-bottom w-50 border-divider"></div>
+
+            <!-- Rights and Copyright Section -->
+            <div class="d-flex align-items-center mt-2 mb-4">
+                <span class="copyright-section mb-3 mb-md-0">© {{ year }} AC</span>
+            </div>
+
+        </footer>
+    </div>
+
+    {% block scripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="{% static 'js/text-animation.js' %}"></script>
+        <script src="{% static 'js/header-nav-links.js' %}"></script>
+        <script src="{% static 'js/card-body.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.all.min.js"></script>
+        <script src="{% static 'js/message-sent-alert.js' %}"></script>
+    {% endblock %}
+{% endblock %}

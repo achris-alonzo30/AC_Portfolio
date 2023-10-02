@@ -1,0 +1,140 @@
+{
+  "projects": [
+    {
+      "title": "Atari Breakout",
+      "image": "static/logos/AtariBreakout-logo.png",
+      "description": "A classic arcade game recreated in Python using the Pygame library. Bounce the ball to break the bricks and score points.",
+      "coding_tools": [
+        "#Python",
+        "#Pygame"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "CafeHub",
+      "image": "static/logos/CafeHub-logo.png",
+      "description": "I built this web application for coffee lovers like me where we explore various local coffee shops, read and write reviews through someone posts, and add our own favorite coffee place.",
+      "coding_tools": [
+        "#Python",
+        "#Flask",
+        "#HTML",
+        "#CSS",
+        "#Bootstrap",
+        "#SQLiteDatabase"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "ColorPickr",
+      "image": "static/logos/ColorPickr-logo.png",
+      "description": "ColorPickr is a web application designed for extracting colors from uploaded images. It allows users to upload images and obtain a palette of colors present in the image.",
+      "coding_tools": [
+        "#Python",
+        "#Flask",
+        "#HTML",
+        "#CSS",
+        "#Bootstrap",
+        "#Pillow/Numpy"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "FineMark",
+      "image": "static/logos/FineMark-logo.png",
+      "description": "FineMark is a user-friendly graphical user interface (GUI) application designed for adding watermarks to images. This versatile tool simplifies the process of watermarking images and is developed using Python with Tkinter for the frontend and REST APIs for added functionality.",
+      "coding_tools": [
+        "#Python",
+        "#Tkinter",
+        "#RestAPI"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "MangaTrackr",
+      "image": "static/logos/MangaTrackr-logo.png",
+      "description": "I automated one of my favorite hobbies so I designed to manage and track my favorite mangas by receiving notifications via email or text when new chapters are released, and access direct links to the latest content.",
+      "coding_tools": [
+        "#Python",
+        "#Javascript",
+        "#Flask",
+        "#JSON",
+        "#HTML",
+        "#CSS",
+        "#Bootstrap",
+        "#Selenium",
+        "#Webdriver",
+        "#BeautifulSoup",
+        "#Crontab",
+        "#SMTP Email",
+        "#TwilioAPI"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "MorseMe",
+      "image": "static/logos/MorseMe-logo.png",
+      "description": "MorseMe is a GUI platform for encoding and decoding messages using the Morse code system. This project is an excellent tool for Morse code enthusiasts, learners, or anyone intrigued by the Morse code communication.",
+      "coding_tools": [
+        "#Python",
+        "#Tkinter"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "Personal Website",
+      "image": "static/logos/personal-logo.png",
+      "description": "This is my personal website it serves as a dynamic portfolio and a showcase of my coding skills, knowledge, and creative projects. This is not just a website, it's a reflection of my dedication and passion of continuous learning and innovation for coding.",
+      "coding_tools": [
+        "#Python",
+        "#Javascript",
+        "#Django",
+        "#DjangoDatabase",
+        "#HTML",
+        "#CSS",
+        "#Bootstrap"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "TaskZen",
+      "image": "static/logos/TaskZen-logo.png",
+      "description": "TaskZen is a streamlined task management web application designed to simplify your to-do list. It offers a user-friendly interface and secure authentication for efficient task organization.",
+      "coding_tools": [
+        "#Python",
+        "#Javascript",
+        "#Django",
+        "#DjangoDatabase",
+        "#DjangoUserAuthentication",
+        "#HTML",
+        "#CSS",
+        "#Bootstrap"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "TypeFlash",
+      "image": "static/logos/TypeFlash-logo.png",
+      "description": "I designed this app to enhance my accuracy in typing skills and test my words-per-minute (WPM) speed.",
+      "coding_tools": [
+        "#Python",
+        "#Tkinter"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "Unblock",
+      "image": "static/logos/Unblock-logo.png",
+      "description": "Unblock is a web application is designed for individuals who experience writer's block. It offers a unique approach to overcoming mental barriers while writing and encourage spontaneous and unrestricted writing.",
+      "coding_tools": [
+        "#Python",
+        "#Javascript",
+        "#Django",
+        "#DjangoDatabase",
+        "#HTML",
+        "#CSS",
+        "#Bootstrap"
+      ],
+      "link": "#"
+    }
+  ]
+}

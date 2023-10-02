@@ -1,0 +1,58 @@
+{% extends 'website/base.html' %}
+
+{% block title %} AC: Project-List {% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Project List Section -->
+    <div class="project-list-container-bg p-5">
+
+        <!-- Project List Navigation Headings-->
+        <div class="container d-flex flex-column">
+            <div class="d-flex align-items-center">
+                <a href="{% url 'website:index' %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" fill="#8EB2D9" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                </a>
+                <h1 class="project-list-heading mt-2 mx-2">Alonzo Chris</h1>
+            </div>
+            <h2 class="project-list-subheading">My Projects</h2>
+        </div>
+
+        <!-- Project Card List-->
+        <div class="project-list-cards p-5">
+            <div class="container ">
+                <div class="row">
+                    <!-- Loop through each project in project_data -->
+                    {% for project in project_data %}
+                    <div class="col-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-body d-flex justify-content-center">
+                                <!-- Use the project's image from project_data -->
+                                <img class="img-border shadow" src="{{ project.image }}" alt="{{ project.title }}">
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex flex-column text-start">
+                                    <!-- Use the project's title and description from project_data -->
+                                    <p class="project-description text-justify">{{ project.description }}</p>
+                                    <p class="highlighted-words">{% for tool in project.coding_tools %}{{ tool }}{% if not forloop.last %} {% endif %}{% endfor %}</p>
+                                    <!-- Use the project's link from project_data -->
+                                    <a class="text-decor-none" href="{{ project.link }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+                                          <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+                                          <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

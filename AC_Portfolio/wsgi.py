@@ -1,5 +1,5 @@
 """
-WSGI config for AC_Portfolio project.
+WSGI config for Portfollio project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
