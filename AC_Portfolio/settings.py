@@ -20,7 +20,13 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DJANGO_SECRET_KEY = config('DJANGO_SECRET_KEY')
-
+ENGINE = 'django.db.backends.postgresql'
+URL = config('URL')
+NAME = config('NAME')
+USER = config('USER')
+PASSWORD = config('PASSWORD')
+HOST = config('HOST')
+PORT = config('PORT')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -77,7 +83,17 @@ WSGI_APPLICATION = 'AC_Portfolio.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': URL,
+        'NAME': NAME,
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
+    }
+}
 
 
 # Password validation
