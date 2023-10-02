@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/static/(.*)",  // Match static files
+      "dest": "website/static/$1"  // Map to the actual location of static files
+    },
+    {
       "src": "/(.*)",
       "dest": "AC_Portfolio/wsgi.py"
     }
