@@ -35,7 +35,7 @@ def index(request):
 
 def project_list(request):
     # Get the absolute path to the directory where your JSON file is located
-    json_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'files')
+    json_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../static', 'files')
 
     # Combine the directory path with the JSON filename
     json_path = os.path.join(json_dir, 'project-files.json')
