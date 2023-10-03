@@ -17,7 +17,7 @@ def index(request):
             message = contact_form.cleaned_data['message']
 
             # Create a new ContactMessage instance and save it to the database
-            contact_message = ContactMessage(full_name=full_name, email=email, message=message)
+            contact_message = ContactMessage(full_name = full_name, email = email, message = message)
             contact_message.save()
 
             return redirect('website:index')
@@ -49,3 +49,8 @@ def project_list(request):
         "project_data": project_data['projects'],  # Assuming 'projects' is the key for the projects list in your JSON
     }
     return render(request, 'website/project-list.html', context)
+
+
+def view_resume(request):
+    # Your logic to render the resume page goes here
+    return render(request, 'website/resume.html')
