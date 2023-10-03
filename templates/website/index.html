@@ -8,8 +8,6 @@
     <!-- Header Section -->
     {% include 'website/header.html' %}
 
-
-
     <!-- Welcome, Section -->
     <div class="welcome-section">
         <div class="d-flex flex-column align-items-center text-center">
@@ -282,6 +280,7 @@
 
     {% block scripts %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="{% static 'js/offcanvas.js' %}"></script>
         <script src="{% static 'js/text-animation.js' %}"></script>
         <script src="{% static 'js/header-nav-links.js' %}"></script>
         <script src="{% static 'js/card-body.js' %}"></script>
