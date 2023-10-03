@@ -166,14 +166,16 @@
     <div class="about-section d-flex align-items-center justify-content-center" id="about">
         <div class="container my-5">
             <div class="d-flex align-items-center justify-content-center">
-                <div class="profile-container d-flex">
-
+                <div class="row">
                     <!-- Profile Image -->
-                    <div class="profile-img-container">
-                        <img class="img-border rounded-circle shadow" src="{% static 'images/profile-pic.png' %}" alt="Profile Picture">
+                    <div class="col-md-3 order-md-1">
+                        <div class="profile-img-container mb-3 mb-md-0">
+                            <img class="img-border rounded-circle shadow" src="{% static 'images/profile-pic.png' %}" alt="Profile Picture">
+                        </div>
                     </div>
 
-                    <div class="d-flex flex-column align-items-start ms-4">
+                    <!-- Profile Information -->
+                    <div class="col-md-9 order-md-2">
 
                         <!-- Profile Name -->
                         <h2 class="profile-name">Alonzo Chris</h2>
@@ -184,30 +186,30 @@
                         </div>
 
                         <!-- Profile Bio -->
-                        <p class="profile-bio my-2 lh-lg" align="justify">
+                        <p class="profile-bio my-4 lh-lg" align="">
                             I started my journey with web development, learning <span class="highlighted-words">HTML, CSS, and PHP</span> during my university years.
                         </p>
 
-                        <p class="profile-bio my-2 lh-lg" align="justify">
+                        <p class="profile-bio my-4 lh-lg" align="">
                             My passion for coding led me to explore <span class="highlighted-words">Python and Javascript</span> through self-guided learning.
                             Today, I specialize in both front-end and back-end web development using technologies like <span class="highlighted-words">Flask, Django, and REST API</span>.
                         </p>
 
-                        <p class="profile-bio my-2 lh-lg" align="justify">
+                        <p class="profile-bio my-4 lh-lg" align="">
                             Additionally, I excel in <span class="highlighted-words">Python Scripting, Game Development, Web Scraping,</span> and building <span class="highlighted-words">GUI applications</span>.
                             I'm proficient in <span class="highlighted-words">Git, GitHub, and version control</span> for collaborative coding.
                         </p>
 
-                        <p class="profile-bio my-2 lh-lg" align="justify">
+                        <p class="profile-bio my-4 lh-lg" align="">
                             Outside of coding, I enjoy <span class="highlighted-words">stock trading, maintaining a healthy lifestyle with frequent gym visits,</span> and indulging in a nightly ritual of reading manga.
                         </p>
 
-                        <p class="profile-bio my-2 lh-lg" align="justify">
+                        <p class="profile-bio my-4 lh-lg" align="">
                             I'm eager to apply my skills and passion to my first professional venture, contributing to the company's growth and pushing my abilities to new heights.
                         </p>
 
                         <!-- Download Resume Button -->
-                        <div class="btn-containers d-flex flex-column justify-content-center mt-4">
+                        <div class="btn-containers d-flex flex-column justify-content-center mt-4 w-25">
                             <a class="btn btn-on-dark-bg border border-2 my-2 p-3" href="{% url 'website:resume' %}">View Résumé</a>
                         </div>
                     </div>
