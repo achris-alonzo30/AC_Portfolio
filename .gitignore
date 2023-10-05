@@ -13,4 +13,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# files
 static
+files
+profile-pic.png
+logos
